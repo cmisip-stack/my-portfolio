@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creative Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .no-scrollbar {
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;  /* Firefox */
+        }
+        
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#6366f1', // Indigo-500
+                        dark: '#0f172a',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-dark text-white font-sans antialiased selection:bg-brand selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-dark/80 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0 font-bold text-xl tracking-tighter">
+                    ALEX<span class="text-brand">.DESIGN</span>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="hover:text-brand transition px-3 py-2 rounded-md text-sm font-medium">Home</a>
+                        <a href="#about" class="hover:text-brand transition px-3 py-2 rounded-md text-sm font-medium">About Me</a>
+                        <a href="#works" class="hover:text-brand transition px-3 py-2 rounded-md text-sm font-medium">Works</a>
+                        <a href="#skills" class="hover:text-brand transition px-3 py-2 rounded-md text-sm font-medium">Skills</a>
+                        <a href="#contact" class="bg-brand hover:bg-indigo-600 px-4 py-2 rounded-md text-sm font-medium transition">Contact</a>
+                    </div>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button onclick="toggleMobileMenu()" class="text-gray-300 hover:text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu Panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-dark border-b border-white/10">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block hover:bg-white/5 px-3 py-2 rounded-md text-base font-medium">Home</a>
+                <a href="#about" class="block hover:bg-white/5 px-3 py-2 rounded-md text-base font-medium">About Me</a>
+                <a href="#works" class="block hover:bg-white/5 px-3 py-2 rounded-md text-base font-medium">Works</a>
+                <a href="#skills" class="block hover:bg-white/5 px-3 py-2 rounded-md text-base font-medium">Skills</a>
+                <a href="#contact" class="block hover:bg-white/5 px-3 py-2 rounded-md text-base font-medium">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
+        <!-- Background glow -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand/20 rounded-full blur-3xl -z-10"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 text-center md:text-left">
+                <p class="text-brand font-semibold tracking-wide uppercase mb-2">Portfolio 2025</p>
+                <h1 class="text-5xl md:text-7xl font-extrabold leading-tight mb-6">
+                    Building Digital <br>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand to-purple-400">Experiences</span>
+                </h1>
+                <p class="text-gray-400 text-lg mb-8 max-w-lg mx-auto md:mx-0">
+                    I am a UI/UX designer and frontend developer passionate about crafting intuitive and dynamic user interfaces.
+                </p>
+                <div class="flex gap-4 justify-center md:justify-start">
+                    <a href="#works" class="bg-brand hover:bg-indigo-600 text-white px-8 py-3 rounded-full font-semibold transition shadow-lg shadow-brand/25">
+                        View Works
+                    </a>
+                    <a href="#contact" class="glass-card hover:bg-white/10 text-white px-8 py-3 rounded-full font-semibold transition">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 mt-12 md:mt-0 flex justify-center relative">
+                <!-- Abstract Shapes representation of "Me" -->
+                <div class="relative w-64 h-64 md:w-96 md:h-96">
+                    <div class="absolute inset-0 bg-gradient-to-tr from-brand to-purple-500 rounded-2xl rotate-6 opacity-80"></div>
+                    <div class="absolute inset-0 bg-gray-800 rounded-2xl -rotate-6 border border-white/10 flex items-center justify-center overflow-hidden">
+                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Alex&backgroundColor=b6e3f4" alt="Profile" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-24 bg-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="relative">
+                    <div class="absolute -inset-4 bg-brand/20 rounded-xl blur-xl"></div>
+                    <div class="relative glass-card p-8 rounded-xl border border-white/10">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <p class="font-mono text-gray-300 text-sm leading-relaxed">
+                            <span class="text-brand">const</span> <span class="text-yellow-300">aboutMe</span> = {<br>
+                            &nbsp;&nbsp;name: <span class="text-green-300">'Alex Doe'</span>,<br>
+                            &nbsp;&nbsp;role: <span class="text-green-300">'Full Stack Designer'</span>,<br>
+                            &nbsp;&nbsp;passion: <span class="text-green-300">'Pixel Perfection'</span>,<br>
+                            &nbsp;&nbsp;location: <span class="text-green-300">'Remote'</span><br>
+                            };
+                        </p>
+                    </div>
+                </div>
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-bold mb-6">Who I Am</h2>
+                    <p class="text-gray-400 leading-relaxed mb-6">
+                        I bridge the gap between design and engineering. With 5 years of experience in the creative industry, I help startups and established brands build products that users love.
+                    </p>
+                    <p class="text-gray-400 leading-relaxed mb-8">
+                        My philosophy is simple: Design should not only look good but work seamlessly. I specialize in creating responsive web applications and mobile-first interfaces.
+                    </p>
+                    
+                    <!-- Stats -->
+                    <div class="grid grid-cols-3 gap-6 border-t border-white/10 pt-8">
+                        <div>
+                            <h4 class="text-3xl font-bold text-white">5+</h4>
+                            <p class="text-sm text-gray-500">Years Exp.</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white">80+</h4>
+                            <p class="text-sm text-gray-500">Projects</p>
+                        </div>
+                        <div>
+                            <h4 class="text-3xl font-bold text-white">100%</h4>
+                            <p class="text-sm text-gray-500">Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Works Section (Carousel) -->
+    <section id="works" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 flex justify-between items-end">
+            <div>
+                <h2 class="text-3xl md:text-4xl font-bold mb-2">Selected Works</h2>
+                <p class="text-gray-400">Swipe to explore my recent projects.</p>
+            </div>
+            
+            <!-- Carousel Controls -->
+            <div class="flex gap-3">
+                <button id="scrollLeft" class="w-12 h-12 rounded-full glass-card flex items-center justify-center hover:bg-white/10 transition">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button id="scrollRight" class="w-12 h-12 rounded-full bg-brand flex items-center justify-center hover:bg-indigo-600 transition">
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Carousel Container -->
+        <div class="w-full overflow-hidden pl-4 sm:pl-6 lg:pl-8">
+            <div id="carousel" class="flex gap-6 overflow-x-auto no-scrollbar pb-12 snap-x snap-mandatory scroll-px-6">
+                
+                <!-- Project Card 1 -->
+                <div class="min-w-[85vw] md:min-w-[400px] snap-start">
+                    <div class="glass-card rounded-2xl overflow-hidden group hover:border-brand/50 transition duration-300 h-full flex flex-col">
+                        <div class="h-64 bg-gray-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60 z-10"></div>
+                            <svg class="w-full h-full text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                                <rect width="100%" height="100%" fill="#1e293b"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#475569" font-size="2">FinTech App</text>
+                            </svg>
+                            <div class="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition transform translate-y-2 group-hover:translate-y-0">
+                                <span class="bg-brand text-white text-xs px-2 py-1 rounded">Mobile App</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold mb-2">NeoBank Dashboard</h3>
+                            <p class="text-gray-400 text-sm mb-4">A complete redesign of a banking interface focusing on accessibility and dark mode data visualization.</p>
+                            <a href="#" class="text-brand text-sm font-semibold hover:underline">View Case Study &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2 -->
+                <div class="min-w-[85vw] md:min-w-[400px] snap-start">
+                    <div class="glass-card rounded-2xl overflow-hidden group hover:border-brand/50 transition duration-300 h-full flex flex-col">
+                        <div class="h-64 bg-gray-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60 z-10"></div>
+                            <svg class="w-full h-full text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                                <rect width="100%" height="100%" fill="#1e293b"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#475569" font-size="2">E-Commerce</text>
+                            </svg>
+                            <div class="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition transform translate-y-2 group-hover:translate-y-0">
+                                <span class="bg-brand text-white text-xs px-2 py-1 rounded">Web Design</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Luxe Fashion Store</h3>
+                            <p class="text-gray-400 text-sm mb-4">High-performance headless e-commerce platform built with Shopify and Next.js.</p>
+                            <a href="#" class="text-brand text-sm font-semibold hover:underline">View Case Study &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3 -->
+                <div class="min-w-[85vw] md:min-w-[400px] snap-start">
+                    <div class="glass-card rounded-2xl overflow-hidden group hover:border-brand/50 transition duration-300 h-full flex flex-col">
+                        <div class="h-64 bg-gray-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60 z-10"></div>
+                            <svg class="w-full h-full text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                                <rect width="100%" height="100%" fill="#1e293b"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#475569" font-size="2">SaaS Platform</text>
+                            </svg>
+                             <div class="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition transform translate-y-2 group-hover:translate-y-0">
+                                <span class="bg-brand text-white text-xs px-2 py-1 rounded">Product Design</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold mb-2">TaskMaster Pro</h3>
+                            <p class="text-gray-400 text-sm mb-4">Productivity tool for remote teams featuring real-time collaboration features.</p>
+                            <a href="#" class="text-brand text-sm font-semibold hover:underline">View Case Study &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 4 -->
+                <div class="min-w-[85vw] md:min-w-[400px] snap-start">
+                    <div class="glass-card rounded-2xl overflow-hidden group hover:border-brand/50 transition duration-300 h-full flex flex-col">
+                        <div class="h-64 bg-gray-800 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-t from-dark to-transparent opacity-60 z-10"></div>
+                            <svg class="w-full h-full text-gray-700" fill="currentColor" viewBox="0 0 24 24">
+                                <rect width="100%" height="100%" fill="#1e293b"/>
+                                <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" fill="#475569" font-size="2">AI Branding</text>
+                            </svg>
+                             <div class="absolute bottom-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition transform translate-y-2 group-hover:translate-y-0">
+                                <span class="bg-brand text-white text-xs px-2 py-1 rounded">Branding</span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow">
+                            <h3 class="text-xl font-bold mb-2">Sentient AI Identity</h3>
+                            <p class="text-gray-400 text-sm mb-4">Complete brand identity system for an emerging Artificial Intelligence startup.</p>
+                            <a href="#" class="text-brand text-sm font-semibold hover:underline">View Case Study &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-24 bg-black/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center">Technical Arsenal</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <!-- Skill Item -->
+                <div class="p-6 rounded-xl border border-white/5 hover:bg-white/5 transition group">
+                    <i class="fab fa-figma text-4xl mb-4 text-gray-500 group-hover:text-purple-500 transition"></i>
+                    <h3 class="font-semibold">Figma</h3>
+                </div>
+                <div class="p-6 rounded-xl border border-white/5 hover:bg-white/5 transition group">
+                    <i class="fab fa-react text-4xl mb-4 text-gray-500 group-hover:text-blue-400 transition"></i>
+                    <h3 class="font-semibold">React</h3>
+                </div>
+                <div class="p-6 rounded-xl border border-white/5 hover:bg-white/5 transition group">
+                    <i class="fab fa-js text-4xl mb-4 text-gray-500 group-hover:text-yellow-400 transition"></i>
+                    <h3 class="font-semibold">JavaScript</h3>
+                </div>
+                <div class="p-6 rounded-xl border border-white/5 hover:bg-white/5 transition group">
+                    <i class="fab fa-css3-alt text-4xl mb-4 text-gray-500 group-hover:text-blue-600 transition"></i>
+                    <h3 class="font-semibold">Tailwind CSS</h3>
+                </div>
+                <div class="p-6 rounded-xl border border-white/5 hover:bg-white/5 transition group">
+                    <i class="fab fa-wordpress text-4xl mb-4 text-gray-500 group-hover:text-white transition"></i>
+                    <h3 class="font-semibold">WordPress</h3>
+                </div>
+                <div class="p-6 rounded-xl border border-white/5 hover:bg-white/5 transition group">
+                    <i class="fas fa-layer-group text-4xl mb-4 text-gray-500 group-hover:text-brand transition"></i>
+                    <h3 class="font-semibold">UI Design</h3>
+                </div>
+                <div class="p-6 rounded-xl border border-white/5 hover:bg-white/5 transition group">
+                    <i class="fas fa-search text-4xl mb-4 text-gray-500 group-hover:text-green-400 transition"></i>
+                    <h3 class="font-semibold">UX Research</h3>
+                </div>
+                <div class="p-6 rounded-xl border border-white/5 hover:bg-white/5 transition group">
+                    <i class="fab fa-git-alt text-4xl mb-4 text-gray-500 group-hover:text-orange-500 transition"></i>
+                    <h3 class="font-semibold">Git</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-24">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass-card rounded-2xl p-8 md:p-12 text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Let's Work Together</h2>
+                <p class="text-gray-400 mb-8">Have a project in mind? I'm available for freelance work and collaborations.</p>
+                
+                <form onsubmit="event.preventDefault(); alert('Thanks for contacting! This is a demo.')" class="space-y-4 text-left max-w-md mx-auto mb-10">
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Name</label>
+                        <input type="text" class="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-brand text-white" placeholder="John Doe">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Email</label>
+                        <input type="email" class="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-brand text-white" placeholder="john@example.com">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-400 mb-1">Message</label>
+                        <textarea rows="4" class="w-full bg-dark/50 border border-white/10 rounded-lg px-4 py-3 focus:outline-none focus:border-brand text-white" placeholder="Tell me about your project..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-brand hover:bg-indigo-600 text-white font-bold py-3 rounded-lg transition">
+                        Send Message
+                    </button>
+                </form>
+
+                <div class="flex justify-center gap-6 text-2xl text-gray-400">
+                    <a href="#" class="hover:text-brand transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="hover:text-brand transition"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="hover:text-brand transition"><i class="fab fa-dribbble"></i></a>
+                    <a href="#" class="hover:text-brand transition"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-white/10 text-center text-gray-500 text-sm">
+        <p>&copy; 2025 Alex Design. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        }
+
+        // Carousel Logic
+        const carousel = document.getElementById('carousel');
+        const leftBtn = document.getElementById('scrollLeft');
+        const rightBtn = document.getElementById('scrollRight');
+
+        rightBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: 400, 
+                behavior: 'smooth' 
+            });
+        });
+
+        leftBtn.addEventListener('click', () => {
+            carousel.scrollBy({
+                left: -400, 
+                behavior: 'smooth' 
+            });
+        });
+    </script>
+</body>
+</html>
